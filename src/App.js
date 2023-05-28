@@ -1,24 +1,89 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { LightTheme, BaseProvider } from "baseui";
+import { Provider as StyletronProvider } from "styletron-react";
+import { Block } from "baseui/block";
+import { Avatar } from "baseui/avatar";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import BlogPostDirectory from "./BlogPostDirectory";
+import AboutMe from "./AboutMe";
+
+const engine = new Styletron();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyletronProvider value={engine}>
+      <BaseProvider theme={LightTheme}>
+        <Router>
+          <Block display="flex" flexDirection="row" minHeight="100vh">
+            <Block
+              width="25%"
+              backgroundColor="#f0f0f0"
+              padding="40px"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+            >
+              <Block width="75%">
+                <Avatar
+                  name="Tyler French"
+                  size="scale3200"
+                  src="https://avatars.githubusercontent.com/u/66684063?v=4"
+                  overrides={{
+                    Avatar: {
+                      style: {
+                        marginBottom: "20px",
+                        width: "100%",
+                        height: "auto",
+                      },
+                    },
+                  }}
+                />
+              </Block>
+              <Block marginTop="20px" textAlign="center">
+                <h1>Tyler French</h1>
+                <Block marginTop="20px">
+                  <a
+                    href="https://github.com/your-github-profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub
+                      style={{
+                        fontSize: "48px",
+                        color: "#24292e",
+                        marginRight: "20px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/your-linkedin-profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin
+                      style={{
+                        fontSize: "48px",
+                        color: "#0077b5",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </a>
+                </Block>
+              </Block>
+            </Block>
+            <Block width="75%" padding="40px">
+              <Routes>
+                <Route path="/" element={<BlogPostDirectory />} />
+                <Route path="/about" element={<AboutMe />} />
+              </Routes>
+            </Block>
+          </Block>
+        </Router>
+      </BaseProvider>
+    </StyletronProvider>
   );
 }
 
