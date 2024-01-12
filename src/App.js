@@ -5,7 +5,7 @@ import { LightTheme, BaseProvider } from "baseui";
 import { Provider as StyletronProvider } from "styletron-react";
 import { Block } from "baseui/block";
 import { Avatar } from "baseui/avatar";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import BlogPostDirectory from "./BlogPostDirectory";
 import AboutMe from "./AboutMe";
 import ArtGallery from "./ArtGallery";
@@ -45,11 +45,11 @@ function App() {
               <Block marginTop="20px" textAlign="center">
                 <h1>Tyler French</h1>
                 <Block marginTop="20px">
-                <Link to="/about">About</Link>
-              </Block>
-              <Block marginTop="20px">
-                <Link to="/art">Art</Link>
-              </Block>
+                  <Link to="/about">About</Link>
+                </Block>
+                <Block marginTop="20px">
+                  <Link to="/art">Art</Link>
+                </Block>
                 <Block marginTop="20px">
                   <a
                     href="https://github.com/your-github-profile"
@@ -74,6 +74,20 @@ function App() {
                       style={{
                         fontSize: "48px",
                         color: "#0077b5",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/tfrench.art/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {/* Using the Instagram logo from FontAwesome */}
+                    <FaInstagram
+                      style={{
+                        fontSize: "48px",
+                        color: "#E4405F",
                         cursor: "pointer",
                       }}
                     />
