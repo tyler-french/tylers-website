@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bazelcon 2023: Go Dependency management in Bzlmod at Uber",
+    "date": "October 24, 2023",
+    "description": "A talk about designing and implementing the Bzlmod implementation for and migrating at Uber.",
+    "url": "https://www.youtube.com/watch?v=QLbkMdUOI48",
+    "type": "talk"
+  },
+  {
     "title": "How We Halved Go Monorepo CI Build Time",
     "date": "September 15, 2022",
     "description": "A blog post about optimizing Go Monorepo CI build time.",
