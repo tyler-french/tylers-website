@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { LightTheme, BaseProvider } from "baseui";
 import { Provider as StyletronProvider } from "styletron-react";
@@ -8,6 +8,7 @@ import { Avatar } from "baseui/avatar";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import BlogPostDirectory from "./BlogPostDirectory";
 import AboutMe from "./AboutMe";
+import ArtGallery from "./ArtGallery";
 
 const engine = new Styletron();
 
@@ -44,6 +45,12 @@ function App() {
               <Block marginTop="20px" textAlign="center">
                 <h1>Tyler French</h1>
                 <Block marginTop="20px">
+                <Link to="/about">About</Link>
+              </Block>
+              <Block marginTop="20px">
+                <Link to="/art">Art</Link>
+              </Block>
+                <Block marginTop="20px">
                   <a
                     href="https://github.com/your-github-profile"
                     target="_blank"
@@ -78,6 +85,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<BlogPostDirectory />} />
                 <Route path="/about" element={<AboutMe />} />
+                <Route path="/art" element={<ArtGallery />} />
               </Routes>
             </Block>
           </Block>
