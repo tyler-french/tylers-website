@@ -79,11 +79,10 @@ function App() {
                     />
                   </a>
                   <a
-                    href="https://www.instagram.com/tfrench.art/"
+                    href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {/* Using the Instagram logo from FontAwesome */}
                     <FaInstagram
                       style={{
                         fontSize: "48px",

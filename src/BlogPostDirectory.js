@@ -1,4 +1,3 @@
-// BlogPostDirectory.js
 import React, { useEffect, useState } from "react";
 import "./BlogPostDirectory.css";
 import { remark } from "remark";
